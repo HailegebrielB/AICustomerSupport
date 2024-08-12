@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import "./supportButton.css";
 import ChatBot from "./chatbot";
 import Image from "next/image";
 import { Button, Fab, Modal } from "@mui/material";
@@ -23,15 +24,15 @@ function home() {
           <a href="">Services</a>
           <a href="">Pricing</a>
           <a href="">Contacts</a>
-          <button style={{backgroundColor:"#4D8DC3"}}>Get Started</button>
+          <button style={{ backgroundColor: "#4D8DC3" }}>Get Started</button>
           <button>Login</button>
         </div>
       </div>
       <div className="homePage">
-        
+
       </div>
       <div className="chatContainer">
-        <Fab onClick={handleOpen}>
+        <Fab onClick={handleOpen} id="csButton">
           <Image src={supportIcon} fill></Image>
         </Fab>
         <Modal open={supportOpen} onClose={handleClose}>
