@@ -37,45 +37,36 @@ function home() {
       </div>
       <div className="homePage">
         <div className="header">
-          <div className="header">
-            <div className="left">
-              <button>Learn More</button>
-              <button>Learn More</button>
-            </div>
-            <div className="right">
-              <h1>We Strive. We Act. We Deliver.</h1>
-              <h4>
-                Specializing in innovative solutions across various industries, leveraging advanced technologies to enhance efficiency and growth.
-              </h4>
-              <h1>We Strive. We Act. We Deliver.</h1>
-              <h4>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy text
-                ever since the 1500s.
-              </h4>
-            </div>
+          <div className="left">
+            <button>Learn More</button>
           </div>
-          <div className="overlay"></div>
-          <video
-            className="vid"
-            src={require("../cameraVid.mp4")}
-            autoPlay
-            muted
-            loop
-          ></video>
+          <div className="right">
+            <h1>We Strive. We Act. We Deliver.</h1>
+            <h4>
+              Specializing in innovative solutions across various industries, leveraging advanced technologies to enhance efficiency and growth.
+            </h4>
+          </div>
         </div>
-        <div className="chatContainer">
-          <Fab onClick={handleOpen} id="csButton">
-            <Image src={supportIcon} fill></Image>
-          </Fab>
-          <Modal open={supportOpen} onClose={handleClose}>
-            <ChatBot></ChatBot>
-          </Modal>
-
-        </div>
-        <Review openState={reviewOpen} closeFunc={() => { setReviewOpen(false) }}></Review>
+        <video
+          className="vid"
+          src={require("../cameraVid.mp4")}
+          autoPlay
+          muted
+          loop
+        ></video>
       </div>
-      );
+      <div className="chatContainer">
+        <Fab onClick={handleOpen} id="csButton">
+          <Image src={supportIcon} fill></Image>
+        </Fab>
+        <Modal open={supportOpen} onClose={handleClose}>
+          <ChatBot></ChatBot>
+        </Modal>
+
+      </div>
+      <Review openState={reviewOpen} closeFunc={() => { setReviewOpen(false) }}></Review>
+    </div>
+  );
 }
 
-      export default home;
+export default home;
