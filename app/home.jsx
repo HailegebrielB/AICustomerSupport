@@ -29,19 +29,20 @@ function home() {
         </div>
       </div>
       <div className="homePage">
-      <div className="header">
+        <div className="header">
           <div className="left">
-              <button>Learn More</button>
+            <button>Learn More</button>
           </div>
           <div className="right">
-              <h1>We Strive. We Act. We Deliver.</h1>
-              <h4>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
-              </h4>
+            <h1>We Strive. We Act. We Deliver.</h1>
+            <h4>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s.
+            </h4>
           </div>
         </div>
+        <div className="overlay"></div>
         <video
           className="vid"
           src={require("../cameraVid.mp4")}
@@ -49,6 +50,18 @@ function home() {
           muted
           loop
         ></video>
+        <div className="homePageContent">
+          <div className="heading">
+            <h2>Welcome to</h2>
+            <h1>Shal Inc.</h1>
+            <button style={{ backgroundColor: "#4D8DC3" }}>Get Started</button>
+          </div>
+          <div className="getStarted">
+            <h2>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </h2>
+          </div>
+        </div>
       </div>
       <div className="chatContainer">
         <Fab onClick={handleOpen} id="csButton">
