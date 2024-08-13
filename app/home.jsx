@@ -29,7 +29,26 @@ function home() {
         </div>
       </div>
       <div className="homePage">
-        
+      <div className="header">
+          <div className="left">
+              <button>Learn More</button>
+          </div>
+          <div className="right">
+              <h1>We Strive. We Act. We Deliver.</h1>
+              <h4>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s.
+              </h4>
+          </div>
+        </div>
+        <video
+          className="vid"
+          src={require("../cameraVid.mp4")}
+          autoPlay
+          muted
+          loop
+        ></video>
       </div>
       <div className="chatContainer">
         <Fab onClick={handleOpen} id="csButton">
