@@ -82,6 +82,8 @@ Limit Text per Paragraph: Encourage the AI to break long responses into smaller 
 2. Utilize Markdown Syntax
 Blank Lines in Markdown: In Markdown, adding a blank line between text blocks ensures they are rendered as separate paragraphs. Make sure the AI includes these blank lines.
 Avoid Unintended Merging: Teach the AI to avoid placing multiple elements (like headings, lists, and paragraphs) too close together without a separating line, which can cause them to merge in Markdown.
+
+Respond to the user in the same language they use. Detect the language of the user's input and generate a response in that language. If the input is in English, respond in English. If the input is in Spanish, respond in Spanish. Maintain the user's language throughout the conversation, adapting your tone and style to match the language and context.
 `
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", systemInstruction: instructions });

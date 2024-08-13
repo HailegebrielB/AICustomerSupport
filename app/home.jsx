@@ -6,12 +6,19 @@ import Image from "next/image";
 import { Button, Fab, Modal } from "@mui/material";
 import supportIcon from "/public/customer-service-support.svg";
 import { useState } from "react";
+import Review from './review.js'
 
 function home() {
   const [supportOpen, setSupportOpen] = useState(false);
+  const [reviewOpen, setReviewOpen] = useState(false);
 
   const handleOpen = () => setSupportOpen(true);
-  const handleClose = () => setSupportOpen(false);
+  const handleClose = () => { setSupportOpen(false); setReviewOpen(true) };
+
+
+
+
+
   return (
     <div className="homeContainer">
       <div className="nav">
@@ -30,49 +37,45 @@ function home() {
       </div>
       <div className="homePage">
         <div className="header">
-          <div className="left">
-            <button>Learn More</button>
+          <div className="header">
+            <div className="left">
+              <button>Learn More</button>
+              <button>Learn More</button>
+            </div>
+            <div className="right">
+              <h1>We Strive. We Act. We Deliver.</h1>
+              <h4>
+                Specializing in innovative solutions across various industries, leveraging advanced technologies to enhance efficiency and growth.
+              </h4>
+              <h1>We Strive. We Act. We Deliver.</h1>
+              <h4>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s.
+              </h4>
+            </div>
           </div>
-          <div className="right">
-            <h1>We Strive. We Act. We Deliver.</h1>
-            <h4>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s.
-            </h4>
-          </div>
+          <div className="overlay"></div>
+          <video
+            className="vid"
+            src={require("../cameraVid.mp4")}
+            autoPlay
+            muted
+            loop
+          ></video>
         </div>
-        <div className="overlay"></div>
-        <video
-          className="vid"
-          src={require("../cameraVid.mp4")}
-          autoPlay
-          muted
-          loop
-        ></video>
-        <div className="homePageContent">
-          <div className="heading">
-            <h2>Welcome to</h2>
-            <h1>Shal Inc.</h1>
-            <button style={{ backgroundColor: "#4D8DC3" }}>Get Started</button>
-          </div>
-          <div className="getStarted">
-            <h2>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </h2>
-          </div>
+        <div className="chatContainer">
+          <Fab onClick={handleOpen} id="csButton">
+            <Image src={supportIcon} fill></Image>
+          </Fab>
+          <Modal open={supportOpen} onClose={handleClose}>
+            <ChatBot></ChatBot>
+          </Modal>
+
         </div>
+        <Review openState={reviewOpen} closeFunc={() => { setReviewOpen(false) }}></Review>
       </div>
-      <div className="chatContainer">
-        <Fab onClick={handleOpen} id="csButton">
-          <Image src={supportIcon} fill></Image>
-        </Fab>
-        <Modal open={supportOpen} onClose={handleClose}>
-          <ChatBot></ChatBot>
-        </Modal>
-      </div>
-    </div>
-  );
+      );
 }
 
-export default home;
+      export default home;
