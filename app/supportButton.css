@@ -1,0 +1,27 @@
+#csButton {}
+
+#csButton::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    inset: -3px;
+    border-radius: inherit;
+
+    background: conic-gradient(#162738 var(--fill), transparent var(--fill));
+
+    transition: --fill 0.6s ease-in-out;
+}
+
+@property --fill {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: 0%;
+}
+
+#csButton:hover {
+    color: greenyellow;
+    --fill: 100%;
+    -webkit-box-shadow: 0px 0px 0px 10px #16273861;
+    -moz-box-shadow: 0px 0px 0px 10px #16273861;
+    box-shadow: 0px 0px 0px 10px #16273861;
+}
