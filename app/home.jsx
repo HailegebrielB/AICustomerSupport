@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./home.css";
 import "./supportButton.css";
@@ -6,18 +7,17 @@ import Image from "next/image";
 import { Button, Fab, Modal } from "@mui/material";
 import supportIcon from "/public/customer-service-support.svg";
 import { useState } from "react";
-import Review from './review.js'
+import Review from "./review.js";
 
-function home() {
+export default function Home() {
   const [supportOpen, setSupportOpen] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
 
   const handleOpen = () => setSupportOpen(true);
-  const handleClose = () => { setSupportOpen(false); setReviewOpen(true) };
-
-
-
-
+  const handleClose = () => {
+    setSupportOpen(false);
+    setReviewOpen(true);
+  };
 
   return (
     <div className="homeContainer">
@@ -43,7 +43,8 @@ function home() {
           <div className="right">
             <h1>We Strive. We Act. We Deliver.</h1>
             <h4>
-              Specializing in innovative solutions across various industries, leveraging advanced technologies to enhance efficiency and growth.
+              Specializing in innovative solutions across various industries,
+              leveraging advanced technologies to enhance efficiency and growth.
             </h4>
           </div>
         </div>
@@ -62,11 +63,13 @@ function home() {
         <Modal open={supportOpen} onClose={handleClose}>
           <ChatBot></ChatBot>
         </Modal>
-
       </div>
-      <Review openState={reviewOpen} closeFunc={() => { setReviewOpen(false) }}></Review>
+      <Review
+        openState={reviewOpen}
+        closeFunc={() => {
+          setReviewOpen(false);
+        }}
+      ></Review>
     </div>
   );
 }
-
-export default home;
